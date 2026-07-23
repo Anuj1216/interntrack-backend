@@ -1,7 +1,5 @@
 package com.interntrack.backend.entity;
-import com.interntrack.backend.entity.User;
 import com.interntrack.backend.enums.ApplicationStatus;
-import com.interntrack.backend.entity.Internship;
 
 import java.time.LocalDate;
 
@@ -42,8 +40,6 @@ public class Application {
 			Internship internship, User student) {
 		super();
 		this.id = id;
-		this.applicantName = applicantName;
-		this.email = email;
 		this.status = status;
 		this.appliedDate = appliedDate;
 		this.internship = internship;

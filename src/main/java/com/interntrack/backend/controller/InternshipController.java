@@ -27,10 +27,16 @@ public class InternshipController {
 		return internshipService.getInternshipById(id);
 	}
 	
+	@GetMapping("/employer/{employerId}")
+	public List<Internship> getInternshipByEmployer(@PathVariable Long employerId) {
+		return internshipService.getInternshipByEmployer(employerId);
+	}
+	
 	@PostMapping
 	public Internship createInternship(
+			@RequestParam Long employerId,
 			@RequestBody Internship internship) {
-		return internshipService.createInternship(internship);
+		return internshipService.createInternship(employerId, internship);
 	}
 	
 	@PutMapping("/{id}")

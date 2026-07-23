@@ -50,6 +50,16 @@ public class ApplicationController {
         return applicationService
                 .getApplicationsByEmail(email);
     }
+    
+    @GetMapping("/student/{studentId}")
+    public List<Application> getApplicationsByStudent(@PathVariable Long studentId){
+    	return applicationService.getApplicationsByStudent(studentId);
+    }
+    
+    @GetMapping("/employer/{employerId}")
+    public List<Application> getApplicationsByEmployer(@PathVariable Long employerId){
+    	return applicationService.getApplicationsByEmployer(employerId);
+    }
 
     @PutMapping("/{id}/status")
     public Application updateStatus(

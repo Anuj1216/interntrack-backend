@@ -57,6 +57,14 @@ public class ApplicationService {
 		return applicationRepository.findByEmail(email);
 	}
 	
+	public List<Application> getApplicationsByStudent(Long studentId){
+		return applicationRepository.findByStudentId(studentId);
+	}
+	
+	public List<Application> getApplicationsByEmployer(Long employerId){
+		return applicationRepository.findByInternshipEmployerId(employerId);
+	}
+	
 	public Application updateStatus(Long id, ApplicationStatus status) {
 		Application application = applicationRepository.findById(id).orElse(null);
 		

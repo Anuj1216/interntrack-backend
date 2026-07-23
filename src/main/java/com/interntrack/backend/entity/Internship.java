@@ -2,9 +2,9 @@ package com.interntrack.backend.entity;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "internships")
-public class Internship {
+	@Entity
+	@Table(name = "internships")
+	public class Internship {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,9 @@ public class Internship {
 	private String skills;
 	private String stipend;
 	
-	
+	@ManyToOne
+	@JoinColumn(name="employer_id")
+	private User employer;
 	
 	
 	public Internship() {
@@ -25,7 +27,7 @@ public class Internship {
 	}
 
 	public Internship(Long id, String title, String company, String location, String description, String skills,
-			String stipend) {
+			String stipend, User employer) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -34,7 +36,8 @@ public class Internship {
 		this.description = description;
 		this.skills = skills;
 		this.stipend = stipend;
-	}
+		this.employer = employer;
+		}
 
 	public Long getId() {
 		return id;
@@ -90,6 +93,14 @@ public class Internship {
 
 	public void setStipend(String stipend) {
 		this.stipend = stipend;
+	}
+
+	public User getEmployer() {
+		return employer;
+	}
+
+	public void setEmployer(User employer) {
+		this.employer = employer;
 	}
 	
 	
