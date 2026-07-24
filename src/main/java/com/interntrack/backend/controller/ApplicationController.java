@@ -43,13 +43,13 @@ public class ApplicationController {
         return applicationService.getAllApplications();
     }
 
-    @GetMapping("/email/{email}")
-    public List<Application> getApplicationsByEmail(
-            @PathVariable String email) {
-
-        return applicationService
-                .getApplicationsByEmail(email);
-    }
+//    @GetMapping("/email/{email}")
+//    public List<Application> getApplicationsByEmail(
+//            @PathVariable String email) {
+//
+//        return applicationService
+//                .getApplicationsByEmail(email);
+//    }
     
     @GetMapping("/student/{studentId}")
     public List<Application> getApplicationsByStudent(@PathVariable Long studentId){

@@ -53,9 +53,9 @@ public class ApplicationService {
 		return applicationRepository.findAll();
 	}
 	
-	public List<Application> getApplicationsByEmail(String email){
-		return applicationRepository.findByEmail(email);
-	}
+//	public List<Application> getApplicationsByEmail(String email){
+//		return applicationRepository.findByEmail(email);
+//	}
 	
 	public List<Application> getApplicationsByStudent(Long studentId){
 		return applicationRepository.findByStudentId(studentId);

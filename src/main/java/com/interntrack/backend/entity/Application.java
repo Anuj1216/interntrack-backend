@@ -13,9 +13,6 @@ public class Application {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String applicantName;
-	private String email;
-	
 	
 	@Enumerated(EnumType.STRING)
 	private ApplicationStatus status;
@@ -53,23 +50,6 @@ public class Application {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getApplicantName() {
-		return applicantName;
-	}
-
-	public void setApplicantName(String applicantName) {
-		this.applicantName = applicantName;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 
 	public ApplicationStatus getStatus() {
 		return status;
